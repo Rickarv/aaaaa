@@ -6,14 +6,15 @@
     <title>Acobijando la Comunidad - Donación de Ropa</title>
     <style>
         :root {
-            --primary: #1d4ed8;       /* Azul brillante */
-            --secondary: #1e3a8a;     /* Azul oscuro */
-            --accent: #60a5fa;        /* Azul claro */
-            --bg-main: #f0f4f8;       /* Fondo gris azulado muy suave */
-            --bg-card: #ffffff;
-            --text-dark: #1e293b;
-            --text-light: #475569;
-            --border: #cbd5e1;
+            --primary: #1d6091;       /* Azul principal para botones y títulos de tarjetas */
+            --primary-hover: #144469; /* Azul más oscuro para el efecto hover */
+            --secondary: #0f2b46;     /* Azul marino oscuro para el encabezado y footer */
+            --accent: #5ca0d3;        /* Azul claro para resaltados */
+            --bg-main: #f0f4f8;       /* Fondo de pantalla con matiz azul muy claro */
+            --bg-card: #ffffff;       /* Fondo blanco para las tarjetas */
+            --text-dark: #1e293b;     /* Texto oscuro */
+            --text-light: #64748b;    /* Texto secundario */
+            --border: #cbd5e1;        /* Bordes claros */
         }
 
         * {
@@ -61,7 +62,7 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb9?auto=format&fit=crop&w=1200&q=80') center/cover;
+            background: linear-gradient(rgba(15, 43, 70, 0.88), rgba(15, 43, 70, 0.88)), url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb9?auto=format&fit=crop&w=1200&q=80') center/cover;
             color: #ffffff;
             text-align: center;
             padding: 5rem 1rem;
@@ -74,6 +75,163 @@
 
         .hero p {
             font-size: 1.1rem;
-            max-width:
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #e2e8f0;
+        }
+
+        .author-tag {
+            background-color: var(--primary);
+            color: white;
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            color: var(--secondary);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .grid-tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .boton {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .boton:hover {
+            background-color: var(--primary-hover);
+        }
+
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">🤝 Acobijando la Comunidad</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#donar">¿Qué donar?</a>
+            <a href="#lugares">Lugares</a>
+        </nav>
+    </header>
+
+    <!-- INICIO / HERO -->
+    <section class="hero" id="inicio">
+        <span class="author-tag">Campaña Hermosillo</span>
+        <h1>Acobijando a la Comunidad</h1>
+        <p>Conoce diferentes formas de apoyar a personas en situación vulnerable y encuentra centros de acopio en Hermosillo.</p>
+        <a href="#lugares" class="boton">Ver centros de acopio</a>
+    </section>
+
+    <!-- SECCIÓN QUÉ DONAR -->
+    <main class="container" id="donar">
+        <h2 class="titulo-seccion">¿Qué se puede donar?</h2>
+        
+        <div class="grid-tarjetas">
+            <div class="card">
+                <h3>👕 Ropa y Calzado</h3>
+                <p>Chamarras, abrigos, pantalones, camisetas y calzado completo en buen estado y limpio.</p>
+            </div>
+
+            <div class="card">
+                <h3>🥫 Alimentos</h3>
+                <p>Productos no perecederos como arroz, frijol, latas de atún, pasta y agua embotellada.</p>
+            </div>
+
+            <div class="card">
+                <h3>🧼 Higiene Personal</h3>
+                <p>Jabón, shampoo, pasta de dientes, cepillos y artículos de aseo personal cerrados.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECCIÓN LUGARES -->
+    <section class="container" id="lugares">
+        <h2 class="titulo-seccion">Centros de Acopio en Hermosillo</h2>
+        
+        <div class="grid-tarjetas">
+            <div class="card">
+                <h3>Banco de Ropa</h3>
+                <p>📍 Mariano Abasolo 30, Col. Centro</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Banco+de+Ropa+Hermosillo" target="_blank" class="boton">Ver Mapa</a>
+            </div>
+
+            <div class="card">
+                <h3>BAMX Hermosillo</h3>
+                <p>📍 Cabo San Lucas 593, Col. Villa Almendra</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=BAMX+Hermosillo" target="_blank" class="boton">Ver Mapa</a>
+            </div>
+
+            <div class="card">
+                <h3>Cruz Roja Mexicana</h3>
+                <p>📍 Blvd. Luis Encinas s/n, Col. San Benito</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Cruz+Roja+Hermosillo" target="_blank" class="boton">Ver Mapa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>Proyecto Escolar · Donaciones Hermosillo</p>
+    </footer>
+
 </body>
 </html>
